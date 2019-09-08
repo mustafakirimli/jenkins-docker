@@ -1,8 +1,8 @@
 FROM jenkins/jenkins
 USER root
 
-# install ansible and awscli
-RUN apt update && apt install python-pip -y && pip install ansible awscli
+# install ansible, awscli and jq
+RUN apt update && apt install python-pip jq -y && pip install ansible awscli
 
 # install docker
 RUN curl -fsSL https://get.docker.com | bash
